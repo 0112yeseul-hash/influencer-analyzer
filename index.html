@@ -138,6 +138,17 @@
   }
   .profile-info h2 { font-size: 16px; font-weight: 500; margin-bottom: 3px; }
   .profile-info p { font-size: 12px; color: var(--text-muted); }
+  .est-badge {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 7px;
+    background: #fef3cd;
+    color: #856404;
+    border-radius: 4px;
+    margin-left: 6px;
+    font-weight: 500;
+    vertical-align: middle;
+  }
   .score-badge {
     margin-left: auto;
     background: var(--brand-light);
@@ -234,13 +245,13 @@
 <main>
   <div class="hero">
     <h1>인플루언서 팔로워 분석</h1>
-    <p>공개 데이터 기반 추정 분석 — 마케팅 협업 의사결정을 위한 참고 자료입니다.</p>
+    <p>공개 데이터 기반 <strong>추정 분석</strong> — 실제 수치와 다를 수 있으며, 마케팅 협업 의사결정의 <strong>참고 자료</strong>로만 활용하세요.</p>
   </div>
 
   <div class="search-card">
-    <div class="search-label">인스타그램 계정 검색</div>
+    <div class="search-label">인플루언서 계정 검색</div>
     <div class="search-row">
-      <input type="text" id="handleInput" placeholder="@username 입력 후 Enter 또는 분석 버튼 클릭">
+      <input type="text" id="handleInput" placeholder="@username 또는 채널 URL 입력 후 Enter">
       <button class="btn-analyze" onclick="analyzeAccount()">분석하기</button>
     </div>
   </div>
@@ -264,27 +275,28 @@
 
     <div class="charts">
       <div class="chart-card">
-        <div class="chart-title">연령대 분포</div>
+        <div class="chart-title">연령대 분포 <span class="est-badge">추정치</span></div>
         <div id="ageChart"></div>
       </div>
       <div class="chart-card">
-        <div class="chart-title">성별 분포</div>
+        <div class="chart-title">성별 분포 <span class="est-badge">추정치</span></div>
         <div class="donut-wrap" id="genderChart"></div>
       </div>
       <div class="chart-card">
-        <div class="chart-title">상위 국가</div>
+        <div class="chart-title">상위 국가 <span class="est-badge">추정치</span></div>
         <div id="countryChart"></div>
       </div>
       <div class="chart-card">
-        <div class="chart-title">관심사 카테고리</div>
+        <div class="chart-title">관심사 카테고리 <span class="est-badge">추정치</span></div>
         <div id="interestChart"></div>
       </div>
     </div>
 
     <div class="note">
-      ※ 이 데이터는 공개 게시물 반응, 댓글 언어 분포, 해시태그 패턴을 기반으로 <strong>추정된 값</strong>입니다.
-      정확한 인구통계는 인플루언서 본인의 Instagram Insights에서 확인해야 합니다.
-      마케팅 협업 최종 결정 전 반드시 실제 인사이트 데이터를 요청하세요.
+      ⚠️ <strong>이 데이터는 실제 수치가 아닌 추정값입니다.</strong><br>
+      공개 게시물 반응, 댓글 언어 분포, 해시태그 패턴을 기반으로 간접 추정한 값으로, 실제와 상당한 차이가 있을 수 있습니다.<br><br>
+      정확한 인구통계(연령·성별·국가)는 인플루언서 본인의 Instagram Insights 또는 플랫폼 공식 데이터를 통해서만 확인 가능합니다.
+      <strong>마케팅 협업 최종 결정 전 반드시 실제 인사이트 데이터를 직접 요청하세요.</strong>
     </div>
   </div>
 </main>
